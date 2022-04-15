@@ -51,5 +51,9 @@ class MainActivity : AppCompatActivity() {
             val intent = MyJobServiceEnqueue.newIntent(page++)
             jobScheduler.enqueue(jobInfo, JobWorkItem(intent))
         }
+
+        binding.jobIntentService.setOnClickListener {
+            MyJobIntentService.enqueue(this, page++)
+        }
     }
 }
